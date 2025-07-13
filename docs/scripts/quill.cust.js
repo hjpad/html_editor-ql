@@ -1,5 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM fully loaded and parsed");
+
   var quill = new Quill("#editor", {
     theme: "snow",
     modules: {
@@ -13,6 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     placeholder: "Compose an epic...",
   });
+
+  console.log("Quill initialized");
 
   // Automatically adjust editor height on mobile devices
   function adjustEditorHeight() {
@@ -28,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   adjustEditorHeight();
 
   function loadContentFromFile(fileName) {
+    console.log("Attempting to load content from:", fileName);
     fetch(`assets/${fileName}`)
       .then((response) => {
         if (!response.ok) {
@@ -36,8 +41,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.json();
       })
       .then((content) => {
+        console.log("Content loaded:", content);
         if (content && content.ops) {
           quill.setContents(content.ops);
+          console.log("Content set in Quill editor");
         } else {
           throw new Error("Invalid content format");
         }
@@ -59,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ]
         };
         quill.setContents(fallbackContent.ops);
+        console.log("Fallback content set in Quill editor");
       });
   }
 
@@ -70,4 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Editor content updated:");
     console.log(JSON.stringify(quill.getContents())); // Delta format
   });
+
+  // Add a small delay to ensure Quill is fully initialized
+  setTimeout(() => {
+    console.log("Current editor contents:");
+    console.log(JSON.stringify(quill.getContents()));
+  }, 1000);
 });
