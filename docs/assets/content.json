@@ -1,24 +1,52 @@
 [
-  { "insert": "Welcome to Quill editor" },
+  { "insert": "Welcome to Quill Editor" },
   { "attributes": { "header": 1 }, "insert": "\n" },
-  {
-    "insert": "\nThis is a fallback content. When running on a server, this will be replaced with content from the file.\n\nYou can edit this content."
-  },
+  { "insert": "This is a sample content file that demonstrates various formatting options available in Quill.\n\n" },
+  { "insert": "Basic Formatting" },
+  { "attributes": { "header": 2 }, "insert": "\n" },
+  { "insert": "You can make text " },
+  { "attributes": { "bold": true }, "insert": "bold" },
+  { "insert": ", " },
+  { "attributes": { "italic": true }, "insert": "italic" },
+  { "insert": ", or " },
+  { "attributes": { "underline": true }, "insert": "underlined" },
+  { "insert": ".\n\n" },
+  { "insert": "Lists" },
+  { "attributes": { "header": 2 }, "insert": "\n" },
+  { "insert": "Unordered list:" },
   { "attributes": { "list": "bullet" }, "insert": "\n" },
-  { "insert": "Try out different formatting options." },
+  { "insert": "First item" },
   { "attributes": { "list": "bullet" }, "insert": "\n" },
-  { "insert": "Experiment with inserting images or links." },
+  { "insert": "Second item" },
   { "attributes": { "list": "bullet" }, "insert": "\n" },
-  {
-    "insert": "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n"
-  },
-  {
-    "insert": "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n"
-  },
-  {
-    "insert": "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n"
-  },
-  {
-    "insert": "\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n"
-  }
+  { "insert": "Third item" },
+  { "attributes": { "list": "bullet" }, "insert": "\n" },
+  { "insert": "\nOrdered list:" },
+  { "attributes": { "list": "ordered" }, "insert": "\n" },
+  { "insert": "First point" },
+  { "attributes": { "list": "ordered" }, "insert": "\n" },
+  { "insert": "Second point" },
+  { "attributes": { "list": "ordered" }, "insert": "\n" },
+  { "insert": "Third point" },
+  { "attributes": { "list": "ordered" }, "insert": "\n" },
+  { "insert": "\n" },
+  { "insert": "Blockquote and Code" },
+  { "attributes": { "header": 2 }, "insert": "\n" },
+  { "insert": "Here's a blockquote:" },
+  { "attributes": { "blockquote": true }, "insert": "\n" },
+  { "insert": "This is a blockquote. It can be used for quotations or to highlight important information." },
+  { "attributes": { "blockquote": true }, "insert": "\n" },
+  { "insert": "\nAnd here's some code:" },
+  { "attributes": { "code-block": true }, "insert": "\n" },
+  { "insert": "function greet(name) {\n  console.log(`Hello, ${name}!`);\n}\n\ngreet('Quill user');" },
+  { "attributes": { "code-block": true }, "insert": "\n" },
+  { "insert": "\n" },
+  { "insert": "Links" },
+  { "attributes": { "header": 2 }, "insert": "\n" },
+  { "insert": "You can add " },
+  { "attributes": { "link": "https://quilljs.com/" }, "insert": "links to websites" },
+  { "insert": ".\n\n" },
+  { "insert": "Experiment and Enjoy!" },
+  { "attributes": { "header": 2 }, "insert": "\n" },
+  { "insert": "Feel free to edit this content and try out different formatting options. Quill provides a rich text editing experience that's easy to use and customize.\n" }
 ]
