@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     theme: "snow",
     modules: {
       toolbar: [
-        ['undo', 'redo']
+        // ["undo", "redo"]
         [{ header: [1, 2, 3, false] }],
         ["bold", "italic", "underline"],
         ["blockquote", "code-block", "link", "image"],
