@@ -2,18 +2,69 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM fully loaded and parsed");
 
+  
+  function imageHandler() {
+    const input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('placeholder', 'Paste image URL or click to upload');
+    input.style.position = 'fixed';
+    input.style.left = '50%';
+    input.style.top = '50%';
+    input.style.transform = 'translate(-50%, -50%)';
+    input.style.zIndex = '9999';
+    document.body.appendChild(input);
+  
+    input.addEventListener('change', function() {
+      const url = this.value;
+      if (url) {
+        insertImage(url);
+      }
+      document.body.removeChild(input);
+    });
+  
+    input.addEventListener('click', function() {
+      const fileInput = document.createElement('input');
+      fileInput.setAttribute('type', 'file');
+      fileInput.setAttribute('accept', 'image/*');
+      fileInput.click();
+  
+      fileInput.onchange = function() {
+        const file = fileInput.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            insertImage(e.target.result);
+          };
+          reader.readAsDataURL(file);
+        }
+        document.body.removeChild(input);
+      };
+    });
+  
+    input.focus();
+  }
+  
+  function insertImage(url) {
+    const range = quill.getSelection(true);
+    quill.insertEmbed(range.index, 'image', url);
+  }
+  
   var quill = new Quill("#editor", {
     theme: "snow",
     modules: {
-      toolbar: [
-        // ["undo", "redo"]
-        [{ header: [1, 2, 3, false] }],
-        ["bold", "italic", "underline"],
-        ["blockquote", "code-block", "link", "image"],
-        [{ list: "ordered" }, { list: "bullet" }],
-        ["clean"],
-      ],
-      history: {          // Module to enable undo/redo functionality
+      toolbar: {
+        container: [
+          [{ header: [1, 2, 3, false] }],
+          ["bold", "italic", "underline"],
+          ["blockquote", "code-block", "link", "image"],
+          [{ list: "ordered" }, { list: "bullet" }],
+          ["clean"],
+        ],
+        handlers: {
+          image: imageHandler
+        }
+      },
+      history: {
         delay: 2000,
         maxStack: 500,
         userOnly: true
