@@ -1,0 +1,14 @@
+Welcome to the Quill Text Editor!
+
+This is an example of pre-filled content loaded from an external file. You can edit this text or replace it with your own content.
+
+Some features of this editor include:
+1. Rich text formatting
+2. Multiple heading levels
+3. Lists (ordered and unordered)
+4. Code blocks
+5. Blockquotes
+
+Feel free to explore and experiment with the various formatting options available in the toolbar above.
+
+Happy writing!
