@@ -35,8 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.text();
       })
       .then((content) => {
-        // const delta = quill.clipboard.convert(content);
-        // quill.setContents(delta);
         quill.setContents(content);
       })
       .catch((error) => {
