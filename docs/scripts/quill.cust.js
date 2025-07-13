@@ -13,7 +13,7 @@ var quill = new Quill("#editor", {
 });
 
 // Load content from file
-fetch("/assets/example_content.txt")
+fetch("assets/example_content.txt")
   .then((response) => response.text())
   .then((content) => {
     quill.setText(content);
