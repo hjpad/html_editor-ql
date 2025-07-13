@@ -6,12 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
     theme: "snow",
     modules: {
       toolbar: [
+        ['undo', 'redo']
         [{ header: [1, 2, 3, false] }],
         ["bold", "italic", "underline"],
-        ["link", "blockquote", "code-block"],
+        ["blockquote", "code-block", "link", "image"],
         [{ list: "ordered" }, { list: "bullet" }],
         ["clean"],
       ],
+      history: {          // Module to enable undo/redo functionality
+        delay: 2000,
+        maxStack: 500,
+        userOnly: true
+      }
     },
     placeholder: "Compose an epic...",
   });
